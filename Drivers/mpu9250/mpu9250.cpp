@@ -306,11 +306,11 @@ void Mpu9250::setAccSensitivity(uint8_t sensitivity){
 		accSensitivity = 4.0 / 32768.0;
 		break;
 	case 2:
-		writeBlocking(imuAddress, ACCEL_CONFIG, (0x10 << 3) | accConfigTmp);
+		writeBlocking(imuAddress, ACCEL_CONFIG, (0x02 << 3) | accConfigTmp);
 		accSensitivity = 8.0 / 32768.0;
 		break;
 	case 3:
-		writeBlocking(imuAddress, ACCEL_CONFIG, (0x11 << 3) | accConfigTmp);
+		writeBlocking(imuAddress, ACCEL_CONFIG, (0x03 << 3) | accConfigTmp);
 		accSensitivity = 16.0 / 32768.0;
 		break;
 	}
@@ -334,11 +334,11 @@ void Mpu9250::setGyroSensitivity(uint8_t sensitivity){
 		gyroSensitivity = 500.0 / 32768.0;
 		break;
 	case 2:
-		writeBlocking(imuAddress, GYRO_CONFIG, (0x10 << 3) | gyroConfigTmp);
+		writeBlocking(imuAddress, GYRO_CONFIG, (0x02 << 3) | gyroConfigTmp);
 		gyroSensitivity = 1000.0 / 32768.0;
 		break;
 	case 3:
-		writeBlocking(imuAddress, GYRO_CONFIG, (0x11 << 3) | gyroConfigTmp);
+		writeBlocking(imuAddress, GYRO_CONFIG, (0x03 << 3) | gyroConfigTmp);
 		gyroSensitivity = 2000.0 / 32768.0;
 		break;
 	}
